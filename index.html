@@ -3,74 +3,229 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flip Tracker</title>
+    <title>Flip Tracker - Horizontal</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         body {
             background-color: #1a1b1e;
             min-height: 100vh;
             font-family: 'Inter', sans-serif;
-            padding: 2rem;
             color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            overflow-x: hidden;
         }
+
+        .scroll-container {
+            display: flex;
+            overflow-x: auto;
+            gap: 2rem;
+            padding: 2rem;
+            width: 100vw;
+            scroll-snap-type: x mandatory;
+            scrollbar-width: thin;
+            scrollbar-color: #4b5563 #1a1b1e;
+        }
+
+        .scroll-container::-webkit-scrollbar {
+            height: 8px;
+        }
+        .scroll-container::-webkit-scrollbar-track {
+            background: #1a1b1e;
+        }
+        .scroll-container::-webkit-scrollbar-thumb {
+            background-color: #4b5563;
+            border-radius: 20px;
+        }
+
         .card {
-            transition: transform 0.2s ease-in-out;
+            flex: 0 0 auto;
+            width: 320px;
+            scroll-snap-align: center;
+            transition: transform 0.2s;
         }
-        .card:hover {
-            transform: translateY(-5px);
+        .card:hover { transform: translateY(-5px); }
+
+        .img-container {
+            height: 300px;
+            width: 100%;
+            overflow: hidden;
+            background: #111;
+        }
+        .img-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top;
         }
     </style>
 </head>
-<body class="flex flex-col items-center">
+<body>
 
-<h1 class="text-3xl font-bold mb-12 border-b border-gray-700 pb-2 tracking-tight">Flip History</h1>
+<h1 class="text-3xl font-bold mb-4 border-b border-gray-700 pb-2 tracking-tight">My Flip Gallery</h1>
+<p class="text-gray-500 mb-4 text-sm uppercase tracking-widest">Scroll nach rechts →</p>
 
-<div class="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-6xl">
+<div class="scroll-container">
 
-    <div class="card bg-[#2c2e33] rounded-2xl shadow-2xl border border-gray-700 w-80 overflow-hidden flex flex-col">
-        <img src="img/EngelschuheFlip1.png" alt="Flip 1" class="w-full h-auto block border-b border-gray-700">
-
+    <div class="card bg-[#2c2e33] rounded-2xl shadow-2xl border border-gray-700 overflow-hidden flex flex-col">
+        <div class="img-container border-b border-gray-700">
+            <img src="img/EngelschuheFlip1.png" alt="Engel Schuhe 1">
+        </div>
         <div class="p-5 flex flex-col flex-grow">
-            <h2 class="text-xl font-bold mb-4 text-pink-400">Engel Schuhe V3</h2>
-
-            <div class="space-y-2 mb-4">
+            <h2 class="text-lg font-bold mb-3 text-pink-400">Engel Schuhe V3 #1</h2>
+            <div class="space-y-2 mb-4 text-sm font-mono">
                 <div class="bg-[#37393f] px-3 py-2 rounded-lg border border-[#40444b]">
-                    <span class="text-gray-400 font-mono text-xs uppercase">Gekauft</span>
-                    <div class="text-white font-mono font-bold text-lg">1.1M</div>
+                    <span class="text-gray-400 uppercase text-[10px]">Gekauft</span>
+                    <div class="text-white font-bold">1.1M</div>
                 </div>
                 <div class="bg-[#37393f] px-3 py-2 rounded-lg border border-[#40444b]">
-                    <span class="text-gray-400 font-mono text-xs uppercase">Verkauft</span>
-                    <div class="text-green-400 font-mono font-bold text-lg">1.75M</div>
+                    <span class="text-gray-400 uppercase text-[10px]">Verkauft</span>
+                    <div class="text-green-400 font-bold">1.75M</div>
                 </div>
             </div>
-
             <div class="mt-auto pt-3 border-t border-gray-700 flex justify-between items-center">
-                <span class="text-gray-500 text-sm font-medium uppercase italic">Profit:</span>
-                <span class="text-green-500 font-mono font-black text-xl">+650k</span>
+                <span class="text-gray-500 text-xs italic">PROFIT:</span>
+                <span class="text-green-500 font-black text-xl">+650k</span>
             </div>
         </div>
     </div>
 
-    <div class="card bg-[#2c2e33] rounded-2xl shadow-2xl border border-gray-700 w-80 overflow-hidden flex flex-col">
-        <img src="img/EngelschuheFlip2.png" alt="Flip 2" class="w-full h-auto block border-b border-gray-700">
-
+    <div class="card bg-[#2c2e33] rounded-2xl shadow-2xl border border-gray-700 overflow-hidden flex flex-col">
+        <div class="img-container border-b border-gray-700">
+            <img src="img/EngelschuheFlip2.png" alt="Engel Schuhe 2">
+        </div>
         <div class="p-5 flex flex-col flex-grow">
-            <h2 class="text-xl font-bold mb-4 text-pink-400">Engel Schuhe V3</h2>
-
-            <div class="space-y-2 mb-4">
+            <h2 class="text-lg font-bold mb-3 text-pink-400">Engel Schuhe V3 #2</h2>
+            <div class="space-y-2 mb-4 text-sm font-mono">
                 <div class="bg-[#37393f] px-3 py-2 rounded-lg border border-[#40444b]">
-                    <span class="text-gray-400 font-mono text-xs uppercase">Gekauft</span>
-                    <div class="text-white font-mono font-bold text-lg">1.11M</div>
+                    <span class="text-gray-400 uppercase text-[10px]">Gekauft</span>
+                    <div class="text-white font-bold">1.11M</div>
                 </div>
                 <div class="bg-[#37393f] px-3 py-2 rounded-lg border border-[#40444b]">
-                    <span class="text-gray-400 font-mono text-xs uppercase">Verkauft</span>
-                    <div class="text-green-400 font-mono font-bold text-lg">1.75M</div>
+                    <span class="text-gray-400 uppercase text-[10px]">Verkauft</span>
+                    <div class="text-green-400 font-bold">1.75M</div>
                 </div>
             </div>
-
             <div class="mt-auto pt-3 border-t border-gray-700 flex justify-between items-center">
-                <span class="text-gray-500 text-sm font-medium uppercase italic">Profit:</span>
-                <span class="text-green-500 font-mono font-black text-xl">+640k</span>
+                <span class="text-gray-500 text-xs italic">PROFIT:</span>
+                <span class="text-green-500 font-black text-xl">+640k</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="card bg-[#2c2e33] rounded-2xl shadow-2xl border border-gray-700 overflow-hidden flex flex-col">
+        <div class="img-container border-b border-gray-700">
+            <img src="img/HackerArmorShulkerFlip1.png" alt="Hacker Shulker">
+        </div>
+        <div class="p-5 flex flex-col flex-grow">
+            <h2 class="text-lg font-bold mb-3 text-blue-400">Hacker Shulker</h2>
+            <div class="space-y-2 mb-4 text-sm font-mono">
+                <div class="bg-[#37393f] px-3 py-2 rounded-lg border border-[#40444b]">
+                    <span class="text-gray-400 uppercase text-[10px]">Gekauft</span>
+                    <div class="text-white font-bold">479k</div>
+                </div>
+                <div class="bg-[#37393f] px-3 py-2 rounded-lg border border-[#40444b]">
+                    <span class="text-gray-400 uppercase text-[10px]">Verkauft</span>
+                    <div class="text-green-400 font-bold">1.32M</div>
+                </div>
+            </div>
+            <div class="mt-auto pt-3 border-t border-gray-700 flex justify-between items-center">
+                <span class="text-gray-500 text-xs italic">PROFIT:</span>
+                <span class="text-green-500 font-black text-xl">+841k</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="card bg-[#2c2e33] rounded-2xl shadow-2xl border border-gray-700 overflow-hidden flex flex-col">
+        <div class="img-container border-b border-gray-700">
+            <img src="img/HackerChestPlateFlip1.png" alt="Hacker Chestplate">
+        </div>
+        <div class="p-5 flex flex-col flex-grow">
+            <h2 class="text-lg font-bold mb-3 text-blue-400">Hacker Chestplate</h2>
+            <div class="space-y-2 mb-4 text-sm font-mono">
+                <div class="bg-[#37393f] px-3 py-2 rounded-lg border border-[#40444b]">
+                    <span class="text-gray-400 uppercase text-[10px]">Gekauft</span>
+                    <div class="text-white font-bold">73.5k</div>
+                </div>
+                <div class="bg-[#37393f] px-3 py-2 rounded-lg border border-[#40444b]">
+                    <span class="text-gray-400 uppercase text-[10px]">Verkauft</span>
+                    <div class="text-green-400 font-bold">310k</div>
+                </div>
+            </div>
+            <div class="mt-auto pt-3 border-t border-gray-700 flex justify-between items-center">
+                <span class="text-gray-500 text-xs italic">PROFIT:</span>
+                <span class="text-green-500 font-black text-xl">+236.5k</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="card bg-[#2c2e33] rounded-2xl shadow-2xl border border-gray-700 overflow-hidden flex flex-col">
+        <div class="img-container border-b border-gray-700">
+            <img src="img/HackerHoseFlip1.png" alt="Hacker Hose 1">
+        </div>
+        <div class="p-5 flex flex-col flex-grow">
+            <h2 class="text-lg font-bold mb-3 text-blue-400">Hacker Hose #1</h2>
+            <div class="space-y-2 mb-4 text-sm font-mono">
+                <div class="bg-[#37393f] px-3 py-2 rounded-lg border border-[#40444b]">
+                    <span class="text-gray-400 uppercase text-[10px]">Gekauft</span>
+                    <div class="text-white font-bold">66.1k</div>
+                </div>
+                <div class="bg-[#37393f] px-3 py-2 rounded-lg border border-[#40444b]">
+                    <span class="text-gray-400 uppercase text-[10px]">Verkauft</span>
+                    <div class="text-green-400 font-bold">310k</div>
+                </div>
+            </div>
+            <div class="mt-auto pt-3 border-t border-gray-700 flex justify-between items-center">
+                <span class="text-gray-500 text-xs italic">PROFIT:</span>
+                <span class="text-green-500 font-black text-xl">+243.9k</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="card bg-[#2c2e33] rounded-2xl shadow-2xl border border-gray-700 overflow-hidden flex flex-col">
+        <div class="img-container border-b border-gray-700">
+            <img src="img/HackerHoseFlip2.png" alt="Hacker Hose 2">
+        </div>
+        <div class="p-5 flex flex-col flex-grow">
+            <h2 class="text-lg font-bold mb-3 text-blue-400">Hacker Hose #2</h2>
+            <div class="space-y-2 mb-4 text-sm font-mono">
+                <div class="bg-[#37393f] px-3 py-2 rounded-lg border border-[#40444b]">
+                    <span class="text-gray-400 uppercase text-[10px]">Gekauft</span>
+                    <div class="text-white font-bold">56k</div>
+                </div>
+                <div class="bg-[#37393f] px-3 py-2 rounded-lg border border-[#40444b]">
+                    <span class="text-gray-400 uppercase text-[10px]">Verkauft</span>
+                    <div class="text-green-400 font-bold">310k</div>
+                </div>
+            </div>
+            <div class="mt-auto pt-3 border-t border-gray-700 flex justify-between items-center">
+                <span class="text-gray-500 text-xs italic">PROFIT:</span>
+                <span class="text-green-500 font-black text-xl">+254k</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="card bg-[#2c2e33] rounded-2xl shadow-2xl border border-gray-700 overflow-hidden flex flex-col">
+        <div class="img-container border-b border-gray-700">
+            <img src="img/HackerHoseFlip3.png" alt="Hacker Hose 3">
+        </div>
+        <div class="p-5 flex flex-col flex-grow">
+            <h2 class="text-lg font-bold mb-3 text-blue-400">Hacker Hose #3</h2>
+            <div class="space-y-2 mb-4 text-sm font-mono">
+                <div class="bg-[#37393f] px-3 py-2 rounded-lg border border-[#40444b]">
+                    <span class="text-gray-400 uppercase text-[10px]">Gekauft</span>
+                    <div class="text-white font-bold">100k</div>
+                </div>
+                <div class="bg-[#37393f] px-3 py-2 rounded-lg border border-[#40444b]">
+                    <span class="text-gray-400 uppercase text-[10px]">Verkauft</span>
+                    <div class="text-green-400 font-bold">310k</div>
+                </div>
+            </div>
+            <div class="mt-auto pt-3 border-t border-gray-700 flex justify-between items-center">
+                <span class="text-gray-500 text-xs italic">PROFIT:</span>
+                <span class="text-green-500 font-black text-xl">+210k</span>
             </div>
         </div>
     </div>
