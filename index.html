@@ -3,45 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Item Tracker</title>
+    <title>Item Tracker - Flip Dashboard</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         body {
             background-color: #1a1b1e;
-            display: flex;
-            justify-content: center;
-            align-items: center;
             min-height: 100vh;
             font-family: 'Inter', sans-serif;
+            padding: 2rem;
         }
     </style>
 </head>
-<body>
+<body class="flex flex-col items-center">
 
-    <div class="bg-[#2c2e33] p-6 rounded-2xl shadow-2xl border border-gray-700 w-80 text-white">
-        
-        <div class="w-full h-48 bg-gray-600 rounded-xl mb-4 overflow-hidden border border-gray-500">
-            <img src="img/EngelschuheFlip1.png" alt="Engel Schuhe V3" class="w-full h-full object-cover">
+<h1 class="text-3xl font-bold text-white mb-10 border-b border-gray-700 pb-2">My Item Flips</h1>
+
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl">
+
+    <div class="bg-[#2c2e33] p-6 rounded-2xl shadow-2xl border border-gray-700 w-80 text-white flex flex-col">
+        <div class="w-full h-48 bg-gray-800 rounded-xl mb-4 overflow-hidden border border-gray-600">
+            <img src="img/EngelschuheFlip1.png" alt="Engel Schuhe V3" class="w-full h-full object-contain p-2">
         </div>
-
-        <h2 class="text-xl font-bold mb-4 text-gray-100">Engel Schuhe V3</h2>
-
-        <div class="space-y-2">
-            
-            <div class="bg-[#37393f] px-3 py-1.5 rounded-md border border-[#40444b] inline-block w-full">
-                <span class="text-gray-300 font-mono">Gekauft: </span>
-                <span class="text-white font-mono font-semibold text-lg">1.1M</span>
+        <h2 class="text-xl font-bold mb-4 text-pink-400">Engel Schuhe V3 <span class="text-xs text-gray-400 font-normal">#1</span></h2>
+        <div class="space-y-2 flex-grow">
+            <div class="bg-[#37393f] px-3 py-2 rounded-md border border-[#40444b] w-full">
+                <span class="text-gray-400 font-mono text-sm">Gekauft:</span>
+                <span class="text-white font-mono font-bold block text-lg">1.1M</span>
             </div>
-
-            <div class="flex items-center gap-2">
-                <div class="bg-[#37393f] px-3 py-1.5 rounded-md border border-[#40444b] inline-block flex-grow">
-                    <span class="text-gray-300 font-mono">Verkauft: </span>
-                    <span class="text-white font-mono font-semibold text-lg">1.75M</span>
-                </div>
+            <div class="bg-[#37393f] px-3 py-2 rounded-md border border-[#40444b] w-full">
+                <span class="text-gray-400 font-mono text-sm">Verkauft:</span>
+                <span class="text-white font-mono font-bold block text-lg text-green-400">1.75M</span>
             </div>
-
+        </div>
+        <div class="mt-4 pt-3 border-t border-gray-700 text-right">
+            <span class="text-xs text-gray-500">Profit:</span>
+            <span class="text-green-500 font-bold ml-2">+650k</span>
         </div>
     </div>
+
+    <div class="bg-[#2c2e33] p-6 rounded-2xl shadow-2xl border border-gray-700 w-80 text-white flex flex-col">
+        <div class="w-full h-48 bg-gray-800 rounded-xl mb-4 overflow-hidden border border-gray-600">
+            <img src="img/EngelschuheFlip2.png" alt="Engel Schuhe V3" class="w-full h-full object-contain p-2">
+        </div>
+        <h2 class="text-xl font-bold mb-4 text-pink-400">Engel Schuhe V3 <span class="text-xs text-gray-400 font-normal">#2</span></h2>
+        <div class="space-y-2 flex-grow">
+            <div class="bg-[#37393f] px-3 py-2 rounded-md border border-[#40444b] w-full">
+                <span class="text-gray-400 font-mono text-sm">Gekauft:</span>
+                <span class="text-white font-mono font-bold block text-lg">1.11M</span>
+            </div>
+            <div class="bg-[#37393f] px-3 py-2 rounded-md border border-[#40444b] w-full">
+                <span class="text-gray-400 font-mono text-sm">Verkauft:</span>
+                <span class="text-white font-mono font-bold block text-lg text-green-400">1.75M</span>
+            </div>
+        </div>
+        <div class="mt-4 pt-3 border-t border-gray-700 text-right">
+            <span class="text-xs text-gray-500">Profit:</span>
+            <span class="text-green-500 font-bold ml-2">+640k</span>
+        </div>
+    </div>
+
+</div>
 
 </body>
 </html>
