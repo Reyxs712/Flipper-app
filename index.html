@@ -19,19 +19,6 @@
         .card:hover {
             transform: translateY(-5px);
         }
-        /* Dieser Teil sorgt dafür, dass die Bilder oben bündig sind */
-        .img-container {
-            height: 320px; /* Feste Höhe für beide Bilder */
-            width: 100%;
-            overflow: hidden;
-            display: block;
-        }
-        .img-container img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover; /* Schneidet das Bild oben passend zu */
-            object-position: top; /* Sorgt dafür, dass man den Namen des Items immer sieht */
-        }
     </style>
 </head>
 <body class="flex flex-col items-center">
@@ -41,9 +28,7 @@
 <div class="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-6xl">
 
     <div class="card bg-[#2c2e33] rounded-2xl shadow-2xl border border-gray-700 w-80 overflow-hidden flex flex-col">
-        <div class="img-container border-b border-gray-700">
-            <img src="img/EngelschuheFlip1.png" alt="Flip 1">
-        </div>
+        <img src="img/EngelschuheFlip1.png" alt="Flip 1" class="w-full h-auto block border-b border-gray-700">
 
         <div class="p-5 flex flex-col flex-grow">
             <h2 class="text-xl font-bold mb-4 text-pink-400">Engel Schuhe V3</h2>
@@ -67,9 +52,7 @@
     </div>
 
     <div class="card bg-[#2c2e33] rounded-2xl shadow-2xl border border-gray-700 w-80 overflow-hidden flex flex-col">
-        <div class="img-container border-b border-gray-700">
-            <img src="img/EngelschuheFlip2.png" alt="Flip 2">
-        </div>
+        <img src="img/EngelschuheFlip2.png" alt="Flip 2" class="w-full h-auto block border-b border-gray-700">
 
         <div class="p-5 flex flex-col flex-grow">
             <h2 class="text-xl font-bold mb-4 text-pink-400">Engel Schuhe V3</h2>
